@@ -7,7 +7,7 @@ app = Flask(__name__)
 # Load the model
 model = pickle.load(open('model.pkl', 'rb'))
 
-@app.route('/'):
+@app.route('/')
 def start():
     return "Model Working"
 
