@@ -7,6 +7,9 @@ app = Flask(__name__)
 # Load the model
 model = pickle.load(open('model.pkl', 'rb'))
 
+@app.route('/'):
+    return "Model Working"
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -19,6 +22,7 @@ def predict():
 
     # Return the predictions
     return jsonify({'output': y.tolist()})
+    
 
 
 if __name__ == '__main__':
